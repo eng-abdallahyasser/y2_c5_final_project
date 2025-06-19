@@ -13,19 +13,15 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   // TODO 2: Create a List<Task> to store tasks
   // Initialize with at least 2 sample tasks
-  List<Task> tasks = [
-    Task(title: 'Buy groceries', description: 'Milk, eggs, bread'),
-    Task(title: 'Do homework', description: 'Math assignment due tomorrow'),
-  ];
-
   
+
   void _updateTask(Task updatedTask) {
     setState(() {
-      final index = tasks.indexWhere((t) => t.title == updatedTask.title);
+      final index = [/** */].indexWhere((t) => t.title == updatedTask.title);
       if (index != -1) {
         // TODO 3: Update the task in the list
         // Use the index to find the task in the list and update it
-        tasks[index] = updatedTask;
+        
       }
     });
   }
@@ -36,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(title: const Text('My To-Do List')),
       body: ListView.builder(
         itemCount:
-            tasks.length, // TODO 4: Update itemCount with actual task count
+            0, // TODO 4: Update itemCount with actual task count
         itemBuilder: (context, index) {
           return Card(
             child: Row(
@@ -44,29 +40,24 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   child: ListTile(
                     title: Text(
-                      'Task Title ${tasks[index].title}',
+                      'Task Title ',
                     ), // TODO 5: Display actual task title
                     subtitle: Text(
-                      'Task Description${tasks[index].description}',
+                      'Task Description',
                     ), // TODO 6: Display actual description
                     onTap: () {
                       // TODO 7: Navigate to TaskDetailScreen when a task is tapped
-                      // Pass the selected task as an argument
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => TaskDetailScreen(
-                            task: tasks[index],
-                            onTaskUpdated: _updateTask,
-                          ),
-                        ),
-                      );
+                      // Pass the selected task as an argument and handle updates using _updateTask
+                      
                     },
                   ),
                 ),
                 Icon(
                   Icons.check_circle,
-                  color: tasks[index].isCompleted ? Colors.green : Colors.grey,
+                  // TODO 10: Change icon color based on task completion status
+                  // Use the isCompleted property of the task to determine the color
+                  //  color: tasks[index].isCompleted ? Colors.green : Colors.grey,
+                  color:true  ? Colors.green : Colors.grey, 
                 ),
                 const SizedBox(width: 10),
               ],
@@ -82,7 +73,9 @@ class _HomeScreenState extends State<HomeScreen> {
           );
           if (newTask != null) {
             setState(() {
-              tasks.add(newTask as Task);
+              // TODO 11: Add the new task to the tasks list
+              // add the new task to the tasks list
+              
             });
           }
         },

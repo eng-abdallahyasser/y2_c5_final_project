@@ -53,11 +53,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
 
                     // TODO 9: Create a new Task object and return it to HomeScreen
                     // Use Navigator.pop(context, newTask) to return the new task
-                    final newTask = Task(
-                      title: _titleController.text,
-                      description: _descriptionController.text,
-                    );
-                    Navigator.pop(context, newTask);
+                    
                   }
                 },
                 child: const Text('Add Task'),

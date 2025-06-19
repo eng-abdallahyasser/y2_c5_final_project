@@ -25,31 +25,8 @@ class TaskDetailScreen extends StatelessWidget {
             const SizedBox(height: 10),
             // TODO 8: Display the task description and add a "Complete" button
             // The button should update the task status and navigate back
-            Text(
-              task.description,
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
-            const SizedBox(height: 20),
-            Center(
-              child: ElevatedButton(
-                onPressed: () {
-                  final updatedTask = Task(
-                    title: task.title,
-                    description: task.description,
-                    isCompleted: !task.isCompleted,
-                  );
-                  onTaskUpdated(task.copyWith(isCompleted: !task.isCompleted));
-                  Navigator.pop(context, updatedTask);
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                ),
-                child: const Text(
-                  'Mark as Complete',
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-            ),
+            // add some padding and style to the description maybe use sizebox
+            
           ],
         ),
       ),
